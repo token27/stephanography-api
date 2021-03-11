@@ -1,5 +1,23 @@
 # A simple stephanograpy api applications in Node.js
 
+## Installation
+
+### Composer
+```
+composer require token27/stephanography-api
+```
+
+### Git
+```
+git clone https://github.com/token27/stephanography-api.git
+```
+
+### Install dependencies
+```
+cd stephanography-api
+npm install
+```
+
 ## Start
 Start the application according to your requirements.
 ``` 
@@ -58,3 +76,4 @@ App testing with jasmine.
 | **/docker/.env** | This file contain your enviroment vars for the container |
 | **/docker/database** | The mysql container data |
 | **/docker/ngrok** | The ngrok container data |
+
