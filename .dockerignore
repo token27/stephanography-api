@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+docker/
+docs/
+images/
+.deployment
+docker-compose.yml
+composer.lock
+
+

@@ -1,0 +1,62 @@
+version: '3'
+networks:
+  stephanography-api:
+    driver: bridge
+services:
+  stephanography-nodejs-app:
+    container_name: stephanography-nodejs-app
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "3025:3025"
+    env_file:
+      - ./.env
+    depends_on:
+      - mysql
+  mysql:
+    container_name: stephanography-mysql
+    image: mysql:5.7
+    restart: always
+    ports:
+      - '33025:3306'
+    volumes:
+      - ./docker/database:/var/lib/mysql
+    env_file:
+      - ./docker/.env
+    networks:
+      - stephanography-api
+  phpmyadmin:
+    container_name: stephanography-phpmyadmin
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8025:80'
+    environment:
+      - PMA_VERBOSES=mysql
+      - PMA_HOSTS=mysql
+    #    env_file:
+    #      - ./docker/.env
+    networks:
+      - stephanography-api  
+  ngrok:
+    container_name: stephanography-ngrok
+    image: wernight/ngrok
+    ports:
+      - "4040:4040"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - stephanography-nodejs-app
+    networks:
+      - stephanography-api
+    environment:
+      - NGROK_PORT=host.docker.internal:3025
+      - NGROK_REGION=eu
+      - NGROK_PROTOCOL=http
+      - NGROK_DEBUG=1
+  #      - NGROK_AUTH=<>
+  #      - NGROK_SUBDOMAIN=<>
+

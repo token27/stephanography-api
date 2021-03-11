@@ -1,0 +1,56 @@
+{
+  "name": "stephanography-api",
+  "version": "1.0.0",
+  "author": "Token27 <tokentwentyseven@gmail.com>",
+  "description": "A simple stephanograpy api applications in Node.js",
+  "homepage": "https://github.com/token27/stephanography-api#readme",
+  "license": "MIT",
+  "keywords": [
+    "stephanograpy",
+    "api",
+    "nodejs",
+    "encrypt"
+  ],
+  "bugs": {
+    "url": "https://github.com/token27/stephanography-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/token27/stephanography-api.git"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "production": "SET NODE_ENV=production && nodemon src/index.js",
+    "development": "SET NODE_ENV=development && nodemon src/index.js",
+    "debug": "SET NODE_ENV=test && nodemon src/index.js",
+    "test-init": "./node_modules/jasmine/bin/jasmine.js init",
+    "test": "SET NODE_ENV=test && jasmine",
+    "ngrok": "ngrok http 3025"
+  },
+  "dependencies": {
+    "@randy.tarampi/lwip": "^3.0.17",
+    "combined-stream2": "^1.1.2",
+    "crc-32": "^1.2.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "follow-redirects": "^1.13.3",
+    "fs": "0.0.1-security",
+    "i18n": "^0.13.2",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "q": "^1.5.1",
+    "util": "^0.12.3",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "jasmine": "^2.99.0",
+    "ngrok": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "request": "^2.88.2"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}

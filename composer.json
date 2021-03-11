@@ -1,0 +1,47 @@
+{
+  "name": "token27/stephanography-api",
+  "type": "javascript",
+  "description": "A simple stephanograpy api applications in Node.js",
+  "license": "MIT",
+  "keywords": [
+    "stephanograpy",
+    "api",
+    "nodejs",
+    "encrypt"
+  ],
+  "homepage": "https://github.com/token27/stephanography-api",
+  "authors": [
+    {
+      "name": "Token27",
+      "homepage": "https://github.com/token27",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Contributors",
+      "homepage": "https://github.com/token27/stephanography-api/graphs/contributors",
+      "role": "Contributor"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+  },
+  "support": {
+    "source": "https://github.com/token27/stephanography-api"
+  },
+  "autoload": {
+    "psr-4": {
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+    }
+  },
+  "prefer-stable": true,
+  "scripts": {
+  },
+  "config": {
+    "sort-packages": true,
+    "process-timeout": 600
+  }
+}
